@@ -16,12 +16,14 @@ int main()
         perror("error al abrir");
         return 1;
     }
-
-    char buffer[BUFFER_SIZE];
-    int words[MAX_COLUMNS] = {0};
-    char *word_names[MAX_COLUMNS];
     int start = 281; 
-    int email_column_index = -1;
+ 	int email_column_index = -1;
+    char buffer[BUFFER_SIZE];
+    char *word_names[MAX_COLUMNS];
+    int words[MAX_COLUMNS] = {0};
+    int i;
+    
+   
 
     if (fgets(buffer, sizeof(buffer), csv_file) != NULL)
     {
@@ -47,7 +49,7 @@ int main()
         return 1;
     }
 
-    int i;
+    
     for (i = 0; i < start; ++i) 
     {
         if (fgets(buffer, sizeof(buffer), csv_file) == NULL) 
